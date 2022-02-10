@@ -1,6 +1,7 @@
 {
   "name": "flash",
   "version": "1.0.0",
+  "bin": "./src/index.js",
   "main": "index.js",
   "license": "MIT"
 }
