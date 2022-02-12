@@ -1,46 +1,47 @@
-// const { merge } = require('webpack-merge')
-// const common = require('./webpack.common')
+const { merge } = require('webpack-merge')
+const common = require('./webpack.common')
 
-const port = 3000
+let PORT = 3000;    //initial PORT value
 
-var net = require('net');
-
+//function to check if port is available and update if busy
 /**
  * 
- * @param port - PORT to be checked
- * @param callback - callback function
+ * @param {*} port - port to run the server on
  */
-var portInUse = function (port, callback) {
-    var server = net.createServer(function (socket) {
-        socket.write('Echo server\r\n');
-        socket.pipe(socket);
-    });
+const isPortAvailable = (port) => {
+    //update PORT
+    PORT = port;
 
-    server.on('error', function (e) {
-        callback(true);
-    });
-    
-    server.on('listening', function (e) {
+    const server = net.createServer().listen(port, '127.0.0.1');
+
+    //if port is available
+    server.on('listening', function () {
         server.close();
-        callback(false);
     });
 
-    server.listen(port, '127.0.0.1');
-};
+    //if port is busy, update the current port
+    server.on('error', err => {
+        if (err.code === 'EADDRINUSE') {
+            isPortAvailable(port + 1);
+        }
+    });
+}
 
-portInUse(3000, function (returnValue) {
-    console.log(returnValue);
-});
+isPortAvailable(PORT);
 
-// module.exports = merge(common, {
-//     mode: 'development',
-//     devtool: 'inline-source-map',
-//     devServer: {
-//         port: 3002,
-//         open: true,
-//         compress: true,
-//         client: {
-//             reconnect: true,
-//         },
-//     },
-// })
+const devConfig = {
+    mode: 'development',
+    devtool: 'inline-source-map',
+    devServer: {
+        port: 3000,
+        open: true,
+        compress: true,
+        historyApiFallback: true,
+        client: {
+            reconnect: true,
+            overlay: true,
+        },
+    },
+}
+
+module.exports = merge(common, devConfig)

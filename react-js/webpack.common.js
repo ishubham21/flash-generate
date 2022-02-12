@@ -2,7 +2,6 @@ const path = require('path')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
-//directories
 const BUILD_DIR = path.join(__dirname, 'build');
 const APP_DIR = path.join(__dirname, 'src');
 
@@ -64,6 +63,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'build'),
         filename: '[name].[hash].js',
-        publicPath: '/'
+        pathinfo: false,
+        publicPath: '/',
     },
 }
