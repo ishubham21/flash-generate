@@ -40,7 +40,7 @@ const portConfig = {
 //webpack-dev-server config
 const devConfig = {
     mode: 'development',
-    devtool: 'inline-source-map',
+    devtool: 'source-map',
     devServer: {
         open: true,
         compress: true,

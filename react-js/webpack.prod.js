@@ -4,16 +4,11 @@ const TerserPlugin = require('terser-webpack-plugin')
 
 module.exports = merge(common, {
     mode: 'production',
-    devtool: 'source-map',
+    devtool: 'inline-source-map',
     optimization: {
-        splitChunks: {
-            chunks: 'all'
-        },
         minimize: true,
         minimizer: [
-            new TerserPlugin({
-                cache: true
-            })
+            new TerserPlugin(),
         ],
     },
 })

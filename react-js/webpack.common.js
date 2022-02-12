@@ -2,6 +2,7 @@ const path = require('path')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
+//directories
 const BUILD_DIR = path.join(__dirname, 'build');
 const APP_DIR = path.join(__dirname, 'src');
 
@@ -18,7 +19,7 @@ module.exports = {
                 //for JavaScript
                 test: /\.js$/,
                 exclude: /node_modules/,
-                use: 'babel-loader'
+                use: ['babel-loader']
             },
             {
                 //for CSS
@@ -41,16 +42,22 @@ module.exports = {
                 //For fonts
                 test: /\.(woff|woff2|ttf|otf|eot)$/,
                 use: [
-                  {
-                    //using file-loader too
-                    loader: 'file-loader',
-                    options: {
-                      outputPath: 'fonts'
+                    {
+                        //using file-loader too
+                        loader: 'file-loader',
+                        options: {
+                            outputPath: 'fonts'
+                        }
                     }
-                  }
                 ]
-              },
+            },
         ]
+    },
+    resolve: {
+        alias: {
+            components: path.resolve(__dirname, 'src'),
+        },
+        extensions: ['.js', '.jsx'],
     },
     plugins: [
         //for HTML
@@ -64,6 +71,5 @@ module.exports = {
         path: path.resolve(__dirname, 'build'),
         filename: '[name].[hash].js',
         pathinfo: false,
-        publicPath: '/',
     },
 }
