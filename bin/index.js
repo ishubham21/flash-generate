@@ -89,10 +89,10 @@ const createFolder = (folderName) => {
     return new Promise((resolve, reject) => {
 
         //reject if the foldername is undefined
-        if (!folderName) reject(`No project name was passed`)
+        if (!folderName) return reject(`No project name was passed`)
 
         //reject if a folder with the same name exists
-        if (fs.existsSync(folderName)) reject(`A project with the similar name exits!`)
+        if (fs.existsSync(folderName)) return reject(`A project with the similar name exits!`)
 
         console.log(`Creating a folder for your awesome project...`)
 
