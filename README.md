@@ -1,7 +1,4 @@
 ## Flash Generate (NPM package)
-[![npm version](https://badge.fury.io/js/flash-generate.svg)](https://badge.fury.io/js/flash-generate)
-[![HitCount](http://hits.dwyl.com/ishubham21/flash-generate.svg)](http://hits.dwyl.com/ishubham21/flash-generate)
-[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
 
 ## Introduction
 
