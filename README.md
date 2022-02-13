@@ -1,7 +1,5 @@
 ## Flash Generate (NPM package)
-[![npm version](https://badge.fury.io/js/flash-generate@2x.png)](https://badge.fury.io/js/flash-generate)
-![NPM Downloads](https://img.shields.io/npm/dw/:flash-generate)
-![NPM License](https://img.shields.io/npm/l/:flash-generate)
+[![npm version](https://badge.fury.io/js/flash-generate.svg)](https://badge.fury.io/js/flash-generate)
 [![HitCount](http://hits.dwyl.com/ishubham21/flash-generate.svg)](http://hits.dwyl.com/ishubham21/flash-generate)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
 
@@ -13,7 +11,6 @@ With our lives moving fast, slow installation of dependencies & a relatively slo
 
 Any beginner can get started with the React templates in a very short time!  
 
----
 
 ## Disadvantages of CRA (Create-React-App)
 
@@ -22,8 +19,6 @@ Any beginner can get started with the React templates in a very short time!
  * It is difficult to add custom build configs - it can be achieved by ejecting CRA but it is not recommended for beginners. The other way is you can use packages like customize-cra or react-app-rewired but then they have limited capabilities.
  
  * Most of the complexity of the application is in the background components which are simply plain JavaScript (or maybe TypeScript). Therefore, it is imperative not to rely on the CRA template, or more specifically `react-scripts`. It is a good starter, however, it packs too many things than what we require, and abstracts the configurations entirely.
-
----
 
 ## Advantages of Flash-Generate
 
@@ -75,7 +70,6 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
 
       $ npm install -g yarn
 
----
 
 ## Installation 
 
@@ -90,8 +84,6 @@ or
 ```sh
 yarn global add flash-generate
 ```
-
----
 
 ## Usage
 
