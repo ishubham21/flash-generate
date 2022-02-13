@@ -44,7 +44,7 @@ const updatePackageDotJson = (folderName) => {
 
     return new Promise((resolve, reject) => {
         const packageJSON = `${folderName}/package.json`;
-
+        
         // replace the default name of the application with the folder name
         fs.readFile(packageJSON, (error, file) => {
             if (error) reject(error);

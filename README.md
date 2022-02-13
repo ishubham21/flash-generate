@@ -1,1 +1,3 @@
-I know I need to create a README but I'm sleepy today...
+## Flash Generate (NPM package)
+
+Create-React-App is a great way to get started with any application 
