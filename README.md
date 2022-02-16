@@ -144,4 +144,4 @@ Your app is ready to be deployed.
 
 ## License
 
-Create React App is open source software [licensed as MIT](https://github.com/ishubham21/flash-generate/blob/main/LICENSE). 
+Flash is open source software [licensed as MIT](https://github.com/ishubham21/flash-generate/blob/main/LICENSE). 
