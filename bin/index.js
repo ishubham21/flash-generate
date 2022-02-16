@@ -10,7 +10,7 @@ const installDependencies = require("../utils/installDependencies")
 const isYarnInstalled = require("../utils/detectYarn")
 
 let folderName = process.argv[2]  //picking up the project name from Command-Line
-const sourceFolder = path.join(__dirname, "../lib/react-js")
+const sourceFolder = path.join(__dirname, "../templates/react-js")
 const destinationFolder = folderName
 
 const buildTemplate = () => {
