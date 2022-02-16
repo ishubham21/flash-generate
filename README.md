@@ -1,5 +1,7 @@
 ## Flash Generate (NPM package)
 
+Find the package here - [flash-generate NPM package](https://www.npmjs.com/package/flash-generate)
+
 ## Introduction
 
 Create-React-App is a great way to get started with React applications without having to worry about webpack, babel, and other build dependencies, but getting started with it takes a lot of time! 
@@ -65,7 +67,7 @@ If you need to update `npm`, you can make it using `npm`! Cool right? After runn
 ### Yarn installation - Important
   After installing node, this project will need yarn too, so just run the following command.
 
-      $ npm install -g yarn
+    $ npm install -g yarn
 
 
 ## Installation 
