@@ -53,7 +53,7 @@ Here comes the most important part! Since this is the first version of Flash, th
 flash-generate my-app --template=<TEMPLATE_NAME>
 ```
 
-`TEMPLATE_NAME` is used to specify which template you want to generate. Here is a list of all the valid template names - 
+`TEMPLATE_NAME` is used to specify which template you want to generate. Here is a list of all the valid template names- 
 
   1. **react-js**: Generates a JavaScript-based React template.
   2. **react-router**: Generates a JavaScript-based React template with a pre-installed react-router.`
