@@ -2,7 +2,7 @@ const fs = require('fs-extra')
 
 /**
  * 
- * @param {*} folderName 
+ * @param {string} folderName 
  * @returns a promise that reads the package.json file, 
             converts it into string and replaces the name of the application
  */
@@ -10,7 +10,7 @@ const updateFileContent = (folderName) => {
 
     //scripts to be replaced in the package.json file
     const scripts = `"name": "${folderName}"`
-    console.log(`\nPersonalising the application for you...`)
+    console.log('\x1b[33m%s\x1b[0m', `\nPersonalising the application for you...`)
 
     return new Promise((resolve, reject) => {
         const packageJSON = `${folderName}/package.json`;
@@ -23,7 +23,7 @@ const updateFileContent = (folderName) => {
             const data = file
                 .toString()
                 .replace(
-                    '"name": "react-js"',
+                    '"name": "flash"',
                     scripts
                 )
             fs.writeFile(packageJSON, data, (errorInWriting) => reject(errorInWriting));
@@ -36,7 +36,7 @@ const updateFileContent = (folderName) => {
             const data = file
                 .toString()
                 .replace(
-                    '"name": "react-js"',
+                    '"name": "flash"',
                     scripts
                 )
             fs.writeFile(manifestJSON, data, (errorInWriting) => reject(errorInWriting));

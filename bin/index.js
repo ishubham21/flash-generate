@@ -1,20 +1,49 @@
 #!/usr/bin/env node
 
-const path = require("path")
-const args = require('minimist')(process.argv.slice(2))
+/**
+ * 
+ * List of error codes used in the application can be found in ../utils/getResponseMessage.js
+ * 
+ */
 
-const copyContentFromSource = require('../utils/tranferContent')
-const createFolder = require('../utils/createFolder')
-const updateFileContent = require("../utils/updateFileContent")
-const installDependencies = require("../utils/installDependencies")
-const isYarnInstalled = require("../utils/detectYarn")
+const path = require("path"),
+    args = require('minimist')(process.argv.slice(2))
 
-let folderName = process.argv[2]  //picking up the project name from Command-Line
-const sourceFolder = path.join(__dirname, "../templates/react-js")
-const destinationFolder = folderName
+const copyContentFromSource = require('../utils/tranferContent'),
+    createFolder = require('../utils/createFolder'),
+    updateFileContent = require("../utils/updateFileContent"),
+    installDependencies = require("../utils/installDependencies"),
+    isYarnInstalled = require("../utils/detectYarn"),
+    printErrorMsg = require("../utils/getErrorMessage")
 
-const buildTemplate = () => {
-    console.log("Initializing project..");
+//picking up the project name from terminal
+let folderName = process.argv[2],
+    destinationFolder = folderName,
+    sourceFolder,
+    templateFolder
+
+//updating the source folder to set the template to be retrieved
+const template = args['template']
+if (template) {
+    switch (template) {
+        case 'react-js': templateFolder = 'react-js'
+            break
+        case 'react-router-js': templateFolder = 'react-router-js'
+            break
+        default: {
+            printErrorMsg(1)
+            process.exit(1)
+        }
+    }
+}
+else {
+    printErrorMsg(2)
+    process.exit(2)
+}
+sourceFolder = path.join(__dirname, `../templates/${templateFolder}`)
+
+const generateTemplate = () => {
+    console.log('\x1b[33m%s\x1b[0m', "Initializing project..");
 
     /**
     * Chaining the promises to facilitate async operation
@@ -24,12 +53,13 @@ const buildTemplate = () => {
         .then(() => updateFileContent(folderName))
         .then(() => installDependencies(folderName))
         .then(() => {
-            console.log(
-                `All done!\n\nYour project is now ready\n\nUse the below command to run the app.\n\ncd ${folderName}\nyarn start`
-            )
+            console.log('\x1b[32m%s\x1b[0m', `All done!`)
+            console.log('\nYour project is now ready')
+            console.log('\nUse the below command to run the app')
+            console.log('\x1b[36m%s\x1b[0m', `\n\ncd ${folderName}\nyarn start`)
         })
         .catch(error => {
-            console.log(`Everything was fine until it wasn't :( \n- ${error}`)
+            printErrorMsg(4, error)
         })
 
 }
@@ -37,5 +67,5 @@ const buildTemplate = () => {
 //entry point in the application
 //check if Yarn is installed or not
 isYarnInstalled ?
-    buildTemplate() :
-    console.log(`Yarn is not installed, use the following command to install it - \n npm i -g yarn`)
+    generateTemplate() :
+    printErrorMsg(3)

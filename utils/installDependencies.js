@@ -8,7 +8,7 @@ const { exec } = require('child_process')
  *                         - rejects on an error
  */
 const installDependencies = (folderName) => {
-    console.log(`Installing react and other dependencies...`)
+    console.log('\x1b[33m%s\x1b[0m', `Installing react and other dependencies...`)
 
     return new Promise((resolve, reject) => {
         exec(`cd ${folderName} && git init && yarn install --frozen-lockfile`,

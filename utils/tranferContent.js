@@ -6,7 +6,7 @@ const fs = require('fs-extra')
  */
 const copyContentFromSource = (sourceFolder, destinationFolder) => {
 
-    console.log(`Boosting up your project...`)
+    console.log('\x1b[33m%s\x1b[0m', `Boosting up your project...`)
 
     return new Promise((resolve, reject) => {
         fs.copy(sourceFolder, destinationFolder)
