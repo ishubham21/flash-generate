@@ -1,6 +1,6 @@
 {
   "name": "flash-generate",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "main": "index.js",
   "license": "MIT",
   "bin": {
@@ -11,7 +11,7 @@
     "url": "https://github.com/ishubham21/flash-generate.git"
   },
   "homepage": "https://github.com/ishubham21/flash-generate.git",
-  "devDependencies": {
+  "dependencies": {
     "fs-extra": "^10.0.0",
     "minimist": "^1.2.5"
   }
