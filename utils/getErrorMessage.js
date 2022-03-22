@@ -20,7 +20,7 @@ const printErrorMsg = (errCode, errDescription) => {
             console.log(`
                 Here is a list of all the valid template names - 
                 1. react-js => Generates a JavaScript-based React template.
-                2. react-router => Generates a JavaScript-based React template with a pre-installed react-router.`)
+                2. react-router-js => Generates a JavaScript-based React template with a pre-installed react-router.`)
         }
             break
 
@@ -30,7 +30,7 @@ const printErrorMsg = (errCode, errDescription) => {
             console.log(`
                 Here is a list of all the valid template names - 
                 1. react-js => Generates a JavaScript-based React template.
-                2. react-router => Generates a JavaScript-based React template with a pre-installed react-router.`)
+                2. react-router-js => Generates a JavaScript-based React template with a pre-installed react-router.`)
             console.log('\x1b[33m%s\x1b[0m', `
                 Usage Example => flash-generate my-app --template=react-js\n`)
         }
