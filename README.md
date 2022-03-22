@@ -90,3 +90,7 @@ Your app is ready to be deployed.
 ## License
 
 Flash is open source software [licensed as MIT](https://github.com/ishubham21/flash-generate/blob/main/LICENSE). 
+
+## What's next?
+
+I am caught with my end semester examinations, brb and will add more templates. I'll also bundle Typescript react applications with webpack. Alongside this, I also plan to add SCSS support.
