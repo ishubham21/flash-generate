@@ -2,7 +2,7 @@
 
 /**
  * 
- * List of error codes used in the application can be found in ../utils/getResponseMessage.js
+ * List of error codes used in the application can be found in ../utils/getErrorMessage.js
  * 
  */
 

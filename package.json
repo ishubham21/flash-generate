@@ -1,6 +1,6 @@
 {
   "name": "flash-generate",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "main": "index.js",
   "license": "MIT",
   "bin": {
@@ -14,5 +14,8 @@
   "dependencies": {
     "fs-extra": "^10.0.0",
     "minimist": "^1.2.5"
-  }
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@ishubham21"
+  } 
 }
